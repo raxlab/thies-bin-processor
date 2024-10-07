@@ -1,0 +1,178 @@
+14.08.24 04:16:01  
+14.08.24 04:16:01  
+14.08.24 04:16:01 *************
+14.08.24 04:16:01 Last reset source: Hardware reset
+14.08.24 04:16:01 Booloader started V0.82 Feb 12 2016
+14.08.24 04:16:01 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:16:06 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:16:06 TCPIP: Ethernent isn't available.
+14.08.24 04:16:22 System: free RAM memory: 515584
+14.08.24 04:16:35 *************
+14.08.24 04:16:35 DL16 boot
+14.08.24 04:16:35 Stop Scheduling
+14.08.24 04:16:35 Clear configuration
+14.08.24 04:16:35 Read configuration from file.
+14.08.24 04:16:35 Read end
+14.08.24 04:16:35 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 04:16:35 Initialize configuration
+14.08.24 04:16:35 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:16:40 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:16:40 TCPIP: Ethernent isn't available.
+14.08.24 04:16:47 Initialization OK
+14.08.24 04:16:47 Archive store time is 126 days
+14.08.24 04:16:47 Start processing
+14.08.24 04:16:48 AC power < 12V
+14.08.24 04:16:48 Pressure temperature control swiched off
+14.08.24 04:19:50 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 04:19:56  
+14.08.24 04:19:56  
+14.08.24 04:19:56 *************
+14.08.24 04:19:56 Last reset source: Hardware reset
+14.08.24 04:19:57 Booloader started V0.82 Feb 12 2016
+14.08.24 04:19:57 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:20:02 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:20:02 TCPIP: Ethernent isn't available.
+14.08.24 04:20:17 System: free RAM memory: 515584
+14.08.24 04:20:32 *************
+14.08.24 04:20:32 DL16 boot
+14.08.24 04:20:32 Stop Scheduling
+14.08.24 04:20:32 Clear configuration
+14.08.24 04:20:32 Read configuration from file.
+14.08.24 04:20:32 Read end
+14.08.24 04:20:32 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 04:20:32 Initialize configuration
+14.08.24 04:20:33 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:20:38 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:20:38 TCPIP: Ethernent isn't available.
+14.08.24 04:20:44 Initialization OK
+14.08.24 04:20:44 Archive store time is 126 days
+14.08.24 04:20:44 Start processing
+14.08.24 04:20:45 AC power < 12V
+14.08.24 04:20:45 Pressure temperature control swiched off
+14.08.24 04:23:56 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 04:24:17  
+14.08.24 04:24:17  
+14.08.24 04:24:17 *************
+14.08.24 04:24:17 Last reset source: Hardware reset
+14.08.24 04:24:17 Booloader started V0.82 Feb 12 2016
+14.08.24 04:24:17 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:24:22 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:24:22 TCPIP: Ethernent isn't available.
+14.08.24 04:24:38 System: free RAM memory: 515584
+14.08.24 04:24:54 *************
+14.08.24 04:24:54 DL16 boot
+14.08.24 04:24:54 Stop Scheduling
+14.08.24 04:24:54 Clear configuration
+14.08.24 04:24:54 Read configuration from file.
+14.08.24 04:24:54 Read end
+14.08.24 04:24:54 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 04:24:54 Initialize configuration
+14.08.24 04:24:54 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 04:24:59 TCPIP: IP_FaceIsReady timeout.
+14.08.24 04:25:06 TCPIP: Ethernent isn't available.
+14.08.24 04:25:06 Initialization OK
+14.08.24 04:25:06 Archive store time is 126 days
+14.08.24 04:25:06 Start processing
+14.08.24 04:25:07 AC power < 12V
+14.08.24 04:25:07 Pressure temperature control swiched off
+14.08.24 04:34:08 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 04:34:10 Battery power OK. Measurement started
+14.08.24 05:08:15 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 05:08:16 Battery power OK. Measurement started
+14.08.24 05:08:26 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 05:08:37  
+14.08.24 05:08:37  
+14.08.24 05:08:37 *************
+14.08.24 05:08:37 Last reset source: Hardware reset
+14.08.24 05:08:37 Booloader started V0.82 Feb 12 2016
+14.08.24 05:08:37 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 05:08:42 TCPIP: IP_FaceIsReady timeout.
+14.08.24 05:08:42 TCPIP: Ethernent isn't available.
+14.08.24 05:08:58 System: free RAM memory: 515584
+14.08.24 05:09:11 *************
+14.08.24 05:09:11 DL16 boot
+14.08.24 05:09:11 Stop Scheduling
+14.08.24 05:09:11 Clear configuration
+14.08.24 05:09:11 Read configuration from file.
+14.08.24 05:09:11 Read end
+14.08.24 05:09:11 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 05:09:11 Initialize configuration
+14.08.24 05:09:11 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 05:09:16 TCPIP: IP_FaceIsReady timeout.
+14.08.24 05:09:16 TCPIP: Ethernent isn't available.
+14.08.24 05:09:26 Initialization OK
+14.08.24 05:09:26 Archive store time is 126 days
+14.08.24 05:09:26 Start processing
+14.08.24 05:09:27 AC power < 12V
+14.08.24 05:09:27 Pressure temperature control swiched off
+14.08.24 06:09:15 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:09:19 Battery power OK. Measurement started
+14.08.24 06:09:21 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:09:43 Battery power OK. Measurement started
+14.08.24 06:09:45 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:09:52 Battery power OK. Measurement started
+14.08.24 06:10:38 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:10:39 Battery power OK. Measurement started
+14.08.24 06:10:42 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:10:45 Battery power OK. Measurement started
+14.08.24 06:22:27 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:22:28 Battery power OK. Measurement started
+14.08.24 06:22:31 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:22:59  
+14.08.24 06:22:59  
+14.08.24 06:22:59 *************
+14.08.24 06:22:59 Last reset source: Hardware reset
+14.08.24 06:22:59 Booloader started V0.82 Feb 12 2016
+14.08.24 06:22:59 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 06:23:04 TCPIP: IP_FaceIsReady timeout.
+14.08.24 06:23:04 TCPIP: Ethernent isn't available.
+14.08.24 06:23:20 System: free RAM memory: 515584
+14.08.24 06:23:33 *************
+14.08.24 06:23:33 DL16 boot
+14.08.24 06:23:33 Stop Scheduling
+14.08.24 06:23:33 Clear configuration
+14.08.24 06:23:33 Read configuration from file.
+14.08.24 06:23:33 Read end
+14.08.24 06:23:33 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 06:23:33 Initialize configuration
+14.08.24 06:23:33 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 06:23:38 TCPIP: IP_FaceIsReady timeout.
+14.08.24 06:23:38 TCPIP: Ethernent isn't available.
+14.08.24 06:23:45 Initialization OK
+14.08.24 06:23:45 Archive store time is 126 days
+14.08.24 06:23:45 Start processing
+14.08.24 06:23:46 AC power < 12V
+14.08.24 06:23:46 Pressure temperature control swiched off
+14.08.24 06:23:53 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:24:01  
+14.08.24 06:24:01  
+14.08.24 06:24:01 *************
+14.08.24 06:24:02 Last reset source: Hardware reset
+14.08.24 06:24:02 Booloader started V0.82 Feb 12 2016
+14.08.24 06:24:02 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 06:24:07 TCPIP: IP_FaceIsReady timeout.
+14.08.24 06:24:07 TCPIP: Ethernent isn't available.
+14.08.24 06:24:22 System: free RAM memory: 515584
+14.08.24 06:24:35 *************
+14.08.24 06:24:35 DL16 boot
+14.08.24 06:24:35 Stop Scheduling
+14.08.24 06:24:35 Clear configuration
+14.08.24 06:24:35 Read configuration from file.
+14.08.24 06:24:35 Read end
+14.08.24 06:24:35 Firmware version V3.24 Nov 14 2018 11:42:58
+14.08.24 06:24:35 Initialize configuration
+14.08.24 06:24:36 MAC-Address: 00-24-AD-00-01-CD
+14.08.24 06:24:41 TCPIP: IP_FaceIsReady timeout.
+14.08.24 06:24:41 TCPIP: Ethernent isn't available.
+14.08.24 06:24:47 Initialization OK
+14.08.24 06:24:47 Archive store time is 126 days
+14.08.24 06:24:47 Start processing
+14.08.24 06:24:48 AC power < 12V
+14.08.24 06:24:48 Pressure temperature control swiched off
+14.08.24 06:25:16 Internal battery power less than 11.4V. Measurement stopped
+14.08.24 06:25:23  
+14.08.24 06:25:23  
+14.08.24 06:25:23 *************
+14.08.24 06:25:23 Last reset source: Hardware reset
+14.08.24 06:25:23 Booloader started V0.82 Feb 12 2016
+14.08.24 06:25:23 MAC-Address: 00-24-AD-00-01-CD
