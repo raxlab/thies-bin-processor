@@ -6,6 +6,37 @@ import configparser
 import struct
 
 
+def read_descfile(path) -> dict:
+    ''' 
+    Input: path DESCFILE.INI
+    Returns: dict 
+        key is index [i]
+        value is dict with parameters from .ini
+    '''
+    if type(path) == dict:
+        return path
+    config = configparser.ConfigParser()
+    config.read(path)
+    data_dict = {}
+    for section in config.sections():
+        section_dict = dict(config.items(section))
+        data_dict[int(section)] = section_dict
+    return data_dict
+
+
+def format_dt(datetime: str, date: bool, time: bool) -> str:
+    '''
+    Input: str "YYYY/MM/DD hh:mm:ss"
+    Returns: str
+    - YYYY/MM/DD (True, False), or
+    - hh:mm (False, True), or
+    - YYYY/MM/DD hh:mm (True, True), or
+    - empty str (False, False)
+    '''
+    datelist = datetime.split()
+    return datelist[0]*date + ' '*date*time + datelist[1][:5]*time
+
+
 class THIESDayData:
     # Bytes per row
     BPR = {'av': 99, 'ex': 292}
@@ -37,23 +68,7 @@ class THIESDayData:
         self._date = ''
 
     @staticmethod
-    def _read_descfile(path: str) -> dict:
-        ''' 
-        Input: path DESCFILE.INI
-        Returns: dict 
-            key is index [i]
-            value is dict with parameters from .ini
-        '''
-        config = configparser.ConfigParser()
-        config.read(path)
-        data_dict = {}
-        for section in config.sections():
-            section_dict = dict(config.items(section))
-            data_dict[int(section)] = section_dict
-        return data_dict
-
-    @staticmethod
-    def _bytes2datetime(b: bytes, only_time=False):
+    def _bytes2datetime(b: bytes, only_time: bool = False) -> str:
         '''
         Input: bytes (size 4)
         Output: str (YYYY/MM/DD hh:mm:ss)
@@ -78,7 +93,7 @@ class THIESDayData:
         self._binfile = binfile
         self.nbytes = len(self._binfile)
         self.nrows = int(self.nbytes / self._bpr)
-        self.descfile = THIESDayData._read_descfile(inipath)
+        self.descfile = read_descfile(inipath)
         self.nparameters = len(self.descfile)
         self._make_dataframes()
 
@@ -175,7 +190,7 @@ class THIESDayData:
 
 class THIESData:
 
-    def __init__(self, datatype: str, dirpath: str):
+    def __init__(self, datatype: str, dirpath: str) -> None:
         d = datatype.lower().strip()
         if d not in ['av', 'ex']:
             raise ValueError(
@@ -185,6 +200,7 @@ class THIESData:
         self._datatype = d
         self.filelist = []
         self.size = 0
+        self.descfile = {}
 
         self.verify_path(dirpath)
 
@@ -202,10 +218,11 @@ class THIESData:
 
     def read_folder(self):
         descpath = self._path + '/DESCFILE.INI'
+        self.descfile = read_descfile(descpath)
         for f in self.filelist:
             filepath = f'{self._path}/{f}'
             daydata = THIESDayData(datatype=self._datatype)
-            daydata.read_binfile(binpath=filepath, inipath=descpath)
+            daydata.read_binfile(binpath=filepath, inipath=self.descfile)
             self.daylist.append(daydata)
 
         self.fullData = sum(self.daylist, start=THIESDayData(self._datatype))
