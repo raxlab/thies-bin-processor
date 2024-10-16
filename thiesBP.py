@@ -4,6 +4,7 @@ from bitarray import bitarray
 import pandas as pd
 import configparser
 import struct
+# import time
 
 
 def read_descfile(path) -> dict:
@@ -200,25 +201,25 @@ class THIESData:
         self._datatype = d
         self.filelist = []
         self.size = 0
-        self.descfile = {}
 
-        self.verify_path(dirpath)
+        self._verify_path(dirpath)
+        descpath = self._path + '/DESCFILE.INI'
+        self.descfile = read_descfile(descpath)
 
         self.daylist = []
         self.fullData = pd.DataFrame()
 
-        self.read_folder()
-
-    def verify_path(self, path: str) -> None:
+    def _verify_path(self, path: str) -> None:
         fl = sorted(os.listdir(path))
         if 'DESCFILE.INI' not in fl:
             raise FileNotFoundError('No DESCFILE.INI found in this directory.')
         self.filelist = fl[:-1]
         self.size = len(self.filelist)
 
-    def read_folder(self):
-        descpath = self._path + '/DESCFILE.INI'
-        self.descfile = read_descfile(descpath)
+    def load_df(self) -> pd.DataFrame:
+        '''Reads folder given in DIRPATH and
+        transforms data into DF. Saves it in self.fullData
+        '''
         for f in self.filelist:
             filepath = f'{self._path}/{f}'
             daydata = THIESDayData(datatype=self._datatype)
@@ -228,10 +229,35 @@ class THIESData:
         self.fullData = sum(self.daylist, start=THIESDayData(self._datatype))
         return self.fullData
 
-    def write_csv(self, filename: str) -> None:
+    def df2csv(self, outpath: str) -> None:
         # if self._datatype == 'av':
-        self.fullData.write_csv(filename + '.csv')
-        print(f'Done! Data written in: {filename}.csv')
+        self.fullData.write_csv(outpath + '.csv')
+        print(f'Data written in: {outpath}.csv')
+
+    def read_write(self, outpath: str):
+        '''Quick version of the read-write process.
+        Reads the path given and writes all BIN file data in same CSV
+        Does NOT save as DF the data.
+        '''
+        write_header = True
+        bcount = 0
+        # start = time.time()
+        with open(outpath+'.csv', "w") as outfile:
+            for i, f in enumerate(self.filelist):
+                filepath = f'{self._path}/{f}'
+                daydata = THIESDayData(datatype=self._datatype)
+                daydata.read_binfile(binpath=filepath, inipath=self.descfile)
+                outfile.write(daydata.dataDF.to_csv(header=write_header))
+                bcount += daydata.nbytes
+                if i == 0:
+                    write_header = False
+        # end = time.time()
+        # print(f'Read+Write of {bcount:,}B done in {round(end - start,2)} seconds.')
+        print(f'Data written in: {outpath}.csv')
+
+    @property
+    def shape(self):
+        return self.fullData.shape
 
     def __repr__(self) -> str:
         return str(self.fullData)
