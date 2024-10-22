@@ -101,5 +101,5 @@ For bug reports, requests or other problems please sumbit an issue.
 
 If you have any questions, issues, or comments, you can contact me at:
 
-Email: socovacich@uc.cl
-Github: @sopadeoliva
+* Email: socovacich@uc.cl
+* Github: @sopadeoliva
