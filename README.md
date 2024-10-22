@@ -1,6 +1,6 @@
 # :sunny::umbrella: THIES Binary Processor
 
-This repository processes binary data from the [THIES Data Logger DL16](https://www.thiesclima.com/en/Products/Miscellaneous-Devices-Data-logger/?art=992) binary data. It provides functions to read binary files and export them in CSV format.
+This repository processes binary data from the [THIES Data Logger DL16](https://www.thiesclima.com/en/Products/Miscellaneous-Devices-Data-logger/?art=992). It provides functions to read binary files and export them in CSV format.
 
 #### Data Directory
 
