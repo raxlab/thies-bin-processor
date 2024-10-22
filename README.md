@@ -2,7 +2,7 @@
 
 This repository processes binary data from the [THIES Data Logger DL16](https://www.thiesclima.com/en/Products/Miscellaneous-Devices-Data-logger/?art=992). It provides functions to read binary files and export them in CSV format.
 
-#### Data Directory
+### Data Directory
 
 The binary data export from THIES DL16 should follow this structure (the dates and `DIRNAME` are just examples):
 
@@ -93,11 +93,11 @@ To create the CSV output file:
 data.df2csv(outpath='output_filename')
 ```
 
-#### Contributions
+## Contributions
 
 For bug reports, requests or other problems please sumbit an issue.
 
-#### Contact info
+## Contact info
 
 If you have any questions, issues, or comments, you can contact me at:
 
