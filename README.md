@@ -84,7 +84,7 @@ data.load_df()
 This will load the data as a Pandas DataFrame that can be accessed as:
 
 ```python
-data.fullData.dataDF
+data.dataDF
 ```
 
 To create the CSV output file:

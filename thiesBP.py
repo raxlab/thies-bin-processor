@@ -30,6 +30,17 @@ def add_date_sep(date: str) -> str:
     return date[:4] + '/' + date[4:6] + '/' + date[6:8]
 
 
+def verify_datestr(filename: str) -> bool:
+    '''
+    Returns True if filename has the YYYYMMDD.BIN format
+    '''
+    try:
+        datetime.strptime(filename[:8], "%Y%m%d")
+        return filename.endswith(".BIN")
+    except ValueError:
+        return False
+
+
 def read_descfile(path) -> dict:
     '''
     Input: path DESCFILE.INI
@@ -70,6 +81,7 @@ class THIESDayData:
         self._binfile = None
         self.descfile = {}
         self.nparameters = -1
+        self._parameters = []
         self.nbytes = -1
         self.nrows = -1
         self._date = ''
@@ -256,6 +268,13 @@ Rows: {self.nrows}
 Date: {self.date}
     ''')
 
+    @property
+    def parameters(self) -> list:
+        if self._parameters == []:
+            self._parameters = [self.descfile[i]['name']
+                                for i in self.descfile]
+        return self._parameters
+
     def write_csv(self, filename: str) -> None:
         with open(filename + '.csv', 'w') as outfile:
             outfile.write(self.dataDF.to_csv())
@@ -272,8 +291,9 @@ Date: {self.date}
     def __add__(self, other):
         if isinstance(other, THIESDayData):
             new = THIESDayData(datatype=self._datatype)
-            new.descfile = self.descfile
-            new.nparameters = len(new.descfile)
+            new.descfile = other.descfile
+            new.nparameters = other.nparameters
+            new._parameters = other.parameters
             new.nrows = self.nrows + other.nrows
             new.nbytes = self.nbytes + other.nbytes
             new.statusDF = pd.concat(
@@ -318,7 +338,7 @@ class THIESData:
         fl = sorted(os.listdir(path))
         if 'DESCFILE.INI' not in fl:
             raise FileNotFoundError('No DESCFILE.INI found in this directory.')
-        self.filelist = fl[:-1]
+        self.filelist = [file for file in fl if verify_datestr(file)]
 
     def load_df(self, complete_rows=False) -> pd.DataFrame:
         '''Reads folder given in DIRPATH and
@@ -336,6 +356,7 @@ class THIESData:
             self.daylist.append(daydata)
 
         self.fullData = sum(self.daylist, start=THIESDayData(self._datatype))
+
         return self.fullData
 
     def complete_empty_dates(self):
@@ -380,12 +401,20 @@ class THIESData:
         print(f'Data written in: {outpath}.csv')
 
     @property
+    def dataDF(self):
+        return self.fullData.dataDF
+
+    @property
     def shape(self):
         return self.fullData.shape
 
     @property
     def size(self):
         return len(self.filelist)
+
+    @property
+    def parameters(self):
+        return self.fullData.parameters
 
     def __repr__(self) -> str:
         return str(self.fullData)
