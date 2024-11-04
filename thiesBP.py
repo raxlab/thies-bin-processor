@@ -192,7 +192,7 @@ class THIESDayData:
         self.statusDF.insert(0, 'Time', time_idx)
         self.statusDF.insert(0, 'Date', date_idx)
 
-    def _generate_blank_rows(self) -> list:
+    def _generate_blank_rows(self) -> pd.DataFrame:
         if len(self) == ROWS:
             # Nothing to fill (already full rows)
             return []
@@ -208,7 +208,7 @@ class THIESDayData:
                 # fill it with None row
                 row['Time'] = time
                 new.append(row)
-        return new
+        return pd.DataFrame(new)
 
     def complete_empty(self):
         '''
@@ -218,14 +218,18 @@ class THIESDayData:
         if len(self) == ROWS:
             return
         new_rows = self._generate_blank_rows()
-        self.dataDF = self.dataDF.append(new_rows, ignore_index=True)
+        # self.dataDF = self.dataDF.append(new_rows, ignore_index=True)
+        self.dataDF = pd.concat([self.dataDF, new_rows], ignore_index=True)
         self.dataDF = self.dataDF.sort_values(by='Time').reset_index(drop=True)
-        self.statusDF = self.statusDF.append(new_rows, ignore_index=True)
+        # self.statusDF = self.statusDF.append(new_rows, ignore_index=True)
+        self.statusDF = pd.concat([self.statusDF, new_rows], ignore_index=True)
         self.statusDF = self.statusDF.sort_values(
             by='Time').reset_index(drop=True)
 
         if self._datatype == 'ex':
-            self.datesDF = self.datesDF.append(new_rows, ignore_index=True)
+            # self.datesDF = self.datesDF.append(new_rows, ignore_index=True)
+            self.datesDF = pd.concat(
+                [self.datesDF, new_rows], ignore_index=True)
             self.datesDF = self.datesDF.sort_values(
                 by='Time').reset_index(drop=True)
 
