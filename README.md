@@ -25,7 +25,7 @@ The binary data export from THIES DL16 should follow this structure (the dates a
 
 ## Usage
 
-Check the `bin2txt.ipynb` notebook for usage examples.
+Check the `UserGuideNB.ipynb` notebook for usage examples and for step-by-step instructions on setting up and using the **THIES Binary Processor** with Google Colab with Google Drive.
 
 For local use, make sure all dependencies are installed. This code was developed using Conda. It mainly uses:
 
@@ -95,11 +95,11 @@ data.df2csv(outpath='output_filename')
 
 ## Contributions
 
-For bug reports, requests or other problems please sumbit an issue.
+For bug reports, requests or other problems please feel free to sumbit an issue.
 
 ## Contact info
 
 If you have any questions, issues, or comments, you can contact me at:
 
-* Email: socovacich@uc.cl
-* Github: @sopadeoliva
+- Email: socovacich@uc.cl
+- Github: @sopadeoliva
