@@ -95,7 +95,7 @@ data.df2csv(outpath='output_filename')
 
 ## Contributions
 
-For bug reports, requests or other problems please feel free to sumbit an issue.
+For bug reports, requests, or other problems, please feel free to submit an issue.
 
 ## Contact info
 
@@ -103,3 +103,7 @@ If you have any questions, issues, or comments, you can contact me at:
 
 - Email: socovacich@uc.cl
 - Github: @sopadeoliva
+
+## Acknowledgement
+
+This work was supported by the UC Centers and Field Stations Network (RCER UC), the UC Data Science Initiative, and the School of Engineering at Universidad Católica.
